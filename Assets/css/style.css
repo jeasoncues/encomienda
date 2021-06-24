@@ -1,0 +1,39 @@
+.app-sidebar__user-avatar {
+    width: 80px;
+    padding: 6px;
+}
+
+.app-nav {
+    background-color: #283940;  
+}
+
+.app-sidebar__toggle {
+    background-color: #283940;
+}
+
+.app sidebar-mini{
+    background-color: #283940;
+}
+
+.app-header{
+    background-color: #283940;
+}
+
+
+.app-header__logo{
+    background-color: #283940;
+}
+
+.dropdown-item {
+    background-color: rgb(209, 209, 209);
+}
+
+.app-sidebar{
+    background-color: #283940;
+}
+
+.app-sidebar__toggle:focus, .app-sidebar__toggle:hover {
+    color: #fff;
+    background-color: #283940;
+    text-decoration: none;
+}
