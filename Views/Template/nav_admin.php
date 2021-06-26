@@ -8,12 +8,12 @@
         </div>
       </div>
       <ul class="app-menu">
-        <li><a class="app-menu__item" href="<?= base_url(); ?>/dashboard"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
+        <li><a class="app-menu__item" href="<?= base_url(); ?>/dashboard"><i class="app-menu__icon fas fa-tachometer-alt"></i></i><span class="app-menu__label">Dashboard</span></a></li>
         <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-users"></i><span class="app-menu__label">Usuarios</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-            <li><a class="treeview-item" href="<?= base_url(); ?>/usuarios"><i class="icon fa fa-circle-o"></i> Usuarios</a></li>
-            <li><a class="treeview-item" href="<?= base_url(); ?>/roles" rel="noopener"><i class="icon fa fa-circle-o"></i> Roles</a></li>
-            <li><a class="treeview-item" href="<?= base_url(); ?>/permisos"><i class="icon fa fa-circle-o"></i> Permisos</a></li>
+            <li><a class="treeview-item" href="<?= base_url(); ?>/usuarios"><i class="icon fas fa-chevron-circle-right"></i> Usuarios</a></li>
+            <li><a class="treeview-item" href="<?= base_url(); ?>/roles" rel="noopener"><i class="icon fas fa-chevron-circle-right"></i> Roles</a></li>
+            <li><a class="treeview-item" href="<?= base_url(); ?>/permisos"><i class="icon fas fa-chevron-circle-right"></i> Permisos</a></li>
           </ul>
         </li>
       

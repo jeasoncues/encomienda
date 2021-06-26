@@ -36,6 +36,15 @@
       return $format;
   }
 
+
+  //llamado a los modals
+  function getModal(string $nombremodal, $data){
+    
+    $view_modal = "Views/Template/Modals/{$nombremodal}.php"; //ruta del modal
+    require_once $view_modal;
+
+  }
+
   //limpiar caracteres en caso de inyecciones sql
   function strClean($stringcadena){
 

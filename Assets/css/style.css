@@ -37,3 +37,39 @@
     background-color: #283940;
     text-decoration: none;
 }
+
+
+/* estilos para el icono del menu */
+.app-sidebar__toggle{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15pt;
+
+}
+
+.app-sidebar__toggle::before{
+    display: none;
+}
+
+
+.page-item.active .page-link {
+    background-color: #283940;
+    border-color: #283940;
+}
+
+a{
+    color: #283940;
+}
+
+.page-link {
+    color: #283940;
+}
+
+::selection {
+    background-color: #283940;
+}

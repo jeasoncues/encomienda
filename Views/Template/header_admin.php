@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/style.css">
     <link rel="shortcut icon" href="<?= media(); ?>/images/icon.svg" type="image/x-icon">
     <!-- Font-icon css-->
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
   </head>
   <body class="app sidebar-mini">
     <!-- Navbar-->
@@ -21,7 +21,7 @@
       <a class="app-header__logo" href="<?php echo base_url(); ?>/dashboard">
         <img src="<?=  media(); ?>/images/icon.svg" alt="logo" style="width:50px;">
       </a>
-      <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+      <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"><i class="fas fa-bars"></i></a>
       <!-- Navbar Right Menu-->
       <ul class="app-nav">
         

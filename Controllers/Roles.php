@@ -18,6 +18,15 @@
          $this->views->getView($this,"roles",$data);
      }
 
+
+     public function getRoles()
+     {
+       $arrData = $this->model->selectRoles(); //hacemos llamado al model Roles con el metodo selectRoles
+       echo json_encode($arrData,JSON_UNESCAPED_UNICODE); //convertir en formato json para hacer llamado en ajax (en caso consumamos la api en movil)
+       die(); //finaliza la tarea
+     
+     }
+
   }
 
 
