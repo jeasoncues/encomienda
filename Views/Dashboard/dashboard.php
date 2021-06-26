@@ -2,6 +2,19 @@
 <!-- requerimos con la funcion en helpers para el header -->
 <?php headerAdmin($data); ?>
 
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/60ce0f0d65b7290ac636d43c/1f8ieljge';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+
     <main class="app-content">
       <div class="app-title">
         <div>
@@ -26,3 +39,5 @@
 
 <!-- requerimos con la funcion en helpers para el footer -->
 <?php footerAdmin($data); ?>
+
+

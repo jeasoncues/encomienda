@@ -12,11 +12,15 @@
     <script src="<?= media();?>/js/functions_admin.js"></script>
     <!-- The javascript plugin to display page loading on top-->
     <script src="<?= media();?>/js/plugins/pace.min.js"></script>
+   <!-- alerta -->
+    <script type="text/javascript" src="<?= media(); ?>/js/plugins/sweetalert.min.js"></script>
    
     <!-- libreria de la tabla -->
     <script type="text/javascript" src="<?= media(); ?>/js/plugins/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="<?= media(); ?>/js/plugins/dataTables.bootstrap.min.js"></script>
+   
 
 
     <script src="<?= media();?>/js/functions_roles.js"></script>
+    <script src="<?=media();?>/js/functions_usuarios.js"></script>
     

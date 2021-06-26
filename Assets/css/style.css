@@ -73,3 +73,12 @@ a{
 ::selection {
     background-color: #283940;
 }
+
+.modal-header {
+    background-color: #28A745;
+    color: #fff;
+}
+
+.confirm {
+    background-color: #283940;
+}

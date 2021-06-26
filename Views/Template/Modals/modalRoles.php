@@ -16,17 +16,17 @@
               <form id="formRol" name="formRol">
                 <div class="form-group">
                   <label class="control-label">Nombre</label>
-                  <input class="form-control" id="txtNombre" name="txtNombre" type="text" placeholder="Nombre del rol" required="">
+                  <input class="form-control" id="txtNombre" name="txtNombre" type="text" placeholder="Nombre del rol" >
                 </div>
           
                 <div class="form-group">
                   <label class="control-label">Descripción</label>
-                  <textarea class="form-control" id="txtDescripcion" nam="txtDescripcion" rows="2" placeholder="Descripcion del rol" required=""></textarea>
+                  <textarea class="form-control" id="txtdescripcion" name="txtdescripcion" rows="2" placeholder="Descripcion del rol" ></textarea>
                 </div>
                 
                 <div class="form-group">
                     <label for="exampleSelect1">Estado</label>
-                    <select class="form-control" id="listEstado" name="listEstado" required="">
+                    <select class="form-control" id="listEstado" name="listEstado" >
                       <option value="1">Activo</option>
                       <option value="2">Inactivo</option>
                     </select>

@@ -1,6 +1,13 @@
 <?php
  
- class rolesModel extends Mysql {
+ class RolesModel extends Mysql {
+
+
+	public $intIdrol;
+	public $strRol;
+	public $strDescripcion;
+    public $intestado;
+
 
     public function __construct()
     {
@@ -14,6 +21,34 @@
         $request = $this->listar($sql); //hacemos uso del metodo listar de la clase mysql enviando como parametro la sentencia
         return $request;
     }
+
+
+    public function insertarRol(string $rol, string $descripcion, int $estado)
+    {
+        $return = "";
+        $this->strRol = $rol;
+		$this->strDescripcion = $descripcion;
+        $this->intestado = $estado;
+        
+        //si el rol existe
+        $sql = "SELECT * FROM rol WHERE nombrerol = '{$this->strRol}' ";
+        $request_sql = $this->listar($sql);
+
+        if(empty($request_sql))
+        {
+            $insert = "INSERT INTO rol(nombrerol,descripcion,estado) VALUES (?,?,?)";
+            $arrData = array($this->strRol, $this->strDescripcion, $this->intestado);
+            $request_insert = $this->insertar($insert,$arrData);
+            $return  = $request_insert;
+        }else{
+            $return = 'exist';
+        }
+
+        return $return;
+
+
+    }
+
  }
 
 
