@@ -2,6 +2,7 @@
 
  
   headerAdmin($data);
+  getModal('modalUsuarios',$data);
 
 
 ?>
@@ -32,11 +33,13 @@
                     <thead>
                         <tr>
                         <th>ID</th>
-                        <th>DNI</th>
                         <th>Nombres</th>
                         <th>Apellidos</th>
+                        <th>Email</th>
+                        <th>Telefono</th>
                         <th>Rol</th>
                         <th>Estado</th>
+                        <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>

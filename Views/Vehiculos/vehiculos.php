@@ -22,6 +22,32 @@
         </ul>
       </div>
 
+
+      <div class="row">
+         <div class="col-md-12">
+            <div class="tile">
+               <div class="tile-body">
+                <div class="table-responsive">
+                   <table class="table table-hover table-bordered" id="tableVehiculos">
+                    <thead>
+                        <tr>
+                        <th>ID</th>
+                        <th>Conductor</th>
+                        <th>Placa</th>
+                     
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- consumir la api en ajax -->
+                    </tbody>
+                   </table>
+                </div>
+               </div>
+            </div>
+         </div>
+      
+      </div>
+
     </main>
 
 

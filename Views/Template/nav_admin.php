@@ -13,7 +13,7 @@
           <ul class="treeview-menu">
             <li><a class="treeview-item" href="<?= base_url(); ?>/usuarios"><i class="icon fas fa-chevron-circle-right"></i> Usuarios</a></li>
             <li><a class="treeview-item" href="<?= base_url(); ?>/roles" rel="noopener"><i class="icon fas fa-chevron-circle-right"></i> Roles</a></li>
-            <li><a class="treeview-item" href="<?= base_url(); ?>/permisos"><i class="icon fas fa-chevron-circle-right"></i> Permisos</a></li>
+  
           </ul>
         </li>
       

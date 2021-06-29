@@ -58,34 +58,107 @@
        die(); //finaliza la tarea
      
      }
-     
 
 
+     //EXTRAER UN ROL
+     public function getRol(int $idrol)
+     {
+       $intIdRol =  intval(strClean($idrol));
+
+       if($intIdRol > 0) //id existe  mayor a 0
+       {
+         $arrData = $this->model->selectRol($intIdRol);
+
+         if(empty($arrData)){ //vacio
+           $arrResponse = array('status' => false, 'msg' => 'Datos no encontrados');
+         }else{
+           $arrResponse = array('status' => true, 'data' => $arrData);
+         }
+         echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
+       }
+       die();
+     }     
+   
+
+     //CREAR UN ROL
      public function setRol()
      {
+       $intIdRol = intval(strClean($_POST['idRol']));
        $strRol =  strClean($_POST['txtNombre']);
        $strDescipcion = strClean($_POST['txtdescripcion']);
        $listEstado = intval($_POST['listEstado']);
-       $request = $this->model->insertarRol($strRol,$strDescipcion,$listEstado);
 
+         if($intIdRol == 0){ //rol no existe, insertamos
 
-       if($request > 0) //no hay rol, pasaremos a insertar
-       {
+            $request = $this->model->insertarRol($strRol,$strDescipcion,$listEstado);
+            $option = 1;
 
-        $arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente');
+         }else{
+            //actualizamos (rol existe)
+            $request = $this->model->actualizarRol($intIdRol,$strRol,$strDescipcion,$listEstado);
+            $option = 2;
+         }
 
-       }else if($request == 'exist'){
+         if($request > 0)
+         {
 
-         $arrResponse = array('status' => false, 'msg' => 'El rol ya existe');
+            if($option == 1){  // option 1 => crear rol
+              $arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente');
+            }else{
+              $arrResponse = array('status' => true, 'msg' => 'Datos actualizados correctamente');
+            }
+        
+         }else if($request == 'exist'){
 
-       }else{
-         $arrResponse = array('status' => false, "msg" => 'No es posible almacenar datos');
+          $arrResponse = array('status' => false, 'msg' => 'El rol ya existe');
 
-       }
+        }else{
+          $arrResponse = array('status' => false, "msg" => 'No es posible almacenar datos');
 
+        }
        echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
        die();
 
+     }
+
+
+     //ELIMINAR ROL
+     public function delRol()
+     {
+       if($_POST){ //si hay petecion ejecutamos
+          
+         $intIdRol = intval(strClean($_POST['idrol']));
+         $request = $this->model->eliminarRol($intIdRol);
+
+         if($request == 'ok')
+         {
+           $arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el Rol correctamente');
+
+         }else if($request == 'exist'){
+           $arrResponse = array('status' => false, 'msg' => 'No es posible eliminar un rol asociado a un usuario');
+         }else{
+          $arrResponse = array('status' => false, 'msg' => 'Error al eliminar un Rol');
+         }
+         echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
+       }
+       die();
+     }
+
+
+     //EXTRAER ROLES
+     public function getSelectRoles(){
+        
+        $htmlOptions = ""; // 0 registros => vacio
+        $arrData = $this->model->selectRoles(); //metodo para listar roles
+
+        if(count($arrData) > 0){ //la cantidad de registros es mayor a 0
+
+          for($i=0; $i < count($arrData); $i++){
+            $htmlOptions .= '<option value="'.$arrData[$i]['idrol'].'">'.$arrData[$i]['nombrerol'].'</option>';
+          }
+        }
+        echo $htmlOptions;
+        die();
      }
 
 

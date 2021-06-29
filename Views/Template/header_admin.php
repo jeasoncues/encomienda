@@ -10,6 +10,7 @@
     <title><?= $data['page_tag']; ?></title>
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/main.css">
+    <link rel="stylesheet" href="<?= media(); ?>/css/bootstrap-select.min.css">
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/style.css">
     <link rel="shortcut icon" href="<?= media(); ?>/images/icon.svg" type="image/x-icon">
     <!-- Font-icon css-->

@@ -74,11 +74,28 @@ a{
     background-color: #283940;
 }
 
-.modal-header {
+
+.confirm {
+    background-color: #283940;
+}
+
+
+
+/* COLOR DE MODAL REGISTRAR - ACTUALIZAR */
+.headerRegister {
     background-color: #28A745;
     color: #fff;
 }
 
-.confirm {
+.headerUpdate {
     background-color: #283940;
+    color: #fff;
+}
+
+.notblock {
+    display: none;
+}
+
+.dropdown-item.active, .dropdown-item:active{
+    background-color: #28A745;
 }

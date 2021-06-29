@@ -15,12 +15,20 @@
    <!-- alerta -->
     <script type="text/javascript" src="<?= media(); ?>/js/plugins/sweetalert.min.js"></script>
    
+   
     <!-- libreria de la tabla -->
     <script type="text/javascript" src="<?= media(); ?>/js/plugins/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="<?= media(); ?>/js/plugins/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?= media(); ?>/js/bootstrap-select.min.js"></script>
    
-
-
+  
+    <?php if($data['page_name'] == "roles"){ ?>
     <script src="<?= media();?>/js/functions_roles.js"></script>
+    <?php } ?>
+
+    <?php if($data['page_name'] == "usuarios") {?>
     <script src="<?=media();?>/js/functions_usuarios.js"></script>
+    <?php } ?>
+    
+    <script src="<?=media();?>/js/functions_vehiculos.js"></script>
     

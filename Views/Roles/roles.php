@@ -4,15 +4,16 @@
    getModal('modalRoles',$data); 
 
 ?>
-
+<!-- cargar data de modulos -->
+<div class="contentAjax"></div>
 
 <main class="app-content">
       <div class="app-title">
         <div>
-          <h1><i class="fa fa-dashboard"></i> <?= $data['page_title']; ?>
+          <h1> <?= $data['page_title']; ?>
              
              <!-- boton para agregar nuevo rol -->
-             <button class="btn btn-success" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Nuevo</button>
+             <button class="btn btn-success" type="button" id="btnOpenModal"><i class="fas fa-plus-circle"></i> Nuevo</button>
           
           </h1>
         </div>
