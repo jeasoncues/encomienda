@@ -2,7 +2,13 @@
  
  class Permisos extends Controllers{
 
-    public function __construct(){
+    public function __construct()
+    {
+        session_start();
+        if(empty($_SESSION['logeado']))
+        {
+            header('Location: '.base_url().'/login');
+        }
         parent::__construct();
     }
 

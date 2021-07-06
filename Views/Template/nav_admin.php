@@ -3,12 +3,19 @@
     <aside class="app-sidebar">
       <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="<?= media(); ?>/images/avatar.png" alt="avatar">
         <div>
-          <p class="app-sidebar__user-name">Jeason Cueva</p>
-          <p class="app-sidebar__user-designation">Administrador</p>
+          <p class="app-sidebar__user-name"><?= $_SESSION['userData']['nombres'] ?></p>
+          <p class="app-sidebar__user-designation"><?= $_SESSION['userData']['nombrerol']?></p>
         </div>
       </div>
       <ul class="app-menu">
-        <li><a class="app-menu__item" href="<?= base_url(); ?>/dashboard"><i class="app-menu__icon fas fa-tachometer-alt"></i></i><span class="app-menu__label">Dashboard</span></a></li>
+ 
+        <li><a class="app-menu__item" href="<?= base_url(); ?>/dashboard">
+            <i class="app-menu__icon fas fa-tachometer-alt"></i></i>
+            <span class="app-menu__label">Dashboard</span>
+            </a>
+        </li>
+        
+        
         <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-users"></i><span class="app-menu__label">Usuarios</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
             <li><a class="treeview-item" href="<?= base_url(); ?>/usuarios"><i class="icon fas fa-chevron-circle-right"></i> Usuarios</a></li>

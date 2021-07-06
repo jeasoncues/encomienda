@@ -1,6 +1,7 @@
 <?php 
   
   headerAdmin($data);
+  getModal("modalVehiculos",$data);
 
 ?>
 
@@ -11,7 +12,7 @@
           <h1><i class="fa fa-dashboard"></i> <?= $data['page_title']; ?>
              
              <!-- boton para agregar nuevo rol -->
-             <button class="btn btn-success" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Nuevo</button>
+             <button class="btn btn-success" type="button" id="btnvehiculo"><i class="fas fa-plus-circle"></i> Nuevo</button>
           
           </h1>
         </div>
@@ -34,7 +35,8 @@
                         <th>ID</th>
                         <th>Conductor</th>
                         <th>Placa</th>
-                     
+                        <th>Estado</th>
+                        <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>

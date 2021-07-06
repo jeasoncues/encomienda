@@ -16,7 +16,7 @@
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
   </head>
-  <body class="app sidebar-mini">
+  <body class="app sidebar-mini dark-theme">
     <!-- Navbar-->
     <header class="app-header">
       <a class="app-header__logo" href="<?php echo base_url(); ?>/dashboard">
@@ -24,13 +24,14 @@
       </a>
       <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"><i class="fas fa-bars"></i></a>
       <!-- Navbar Right Menu-->
+
       <ul class="app-nav">
         
         <!-- User Menu-->
-        <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+        <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fas fa-cog"></i></a>
           <ul class="dropdown-menu settings-menu dropdown-menu-right">
-            <li><a class="dropdown-item" href="<?php echo base_url(); ?>/perfil"><i class="fa fa-user fa-lg"></i> Profile</a></li>
-            <li><a class="dropdown-item" href="<?php echo base_url(); ?>/logout"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+            <li><a class="dropdown-item" id="dark"><i class="fas fa-moon"></i> Modo Oscuro</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url(); ?>/logout"><i class="fa fa-sign-out fa-lg"></i> Cerrar Sesion</a></li>
           </ul>
         </li>
       </ul>

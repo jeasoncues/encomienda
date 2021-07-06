@@ -3,17 +3,25 @@
 
   class Roles extends Controllers {
 
-     public function __construct(){
+     public function __construct()
+     {
+        session_start();
+        if(empty($_SESSION['logeado']))
+        {
+            header('Location: '.base_url().'/login');
+        }
          parent::__construct();
      }
 
 
      public function roles()
      {
-         $data['page_id'] = 3;
+         
          $data['page_tag'] = "Roles - Rosa Yolanda";
          $data['page_title'] = "Roles";
          $data['page_name'] = "roles";
+
+         $data['page_functions_js'] = "functions_roles.js";
          
          $this->views->getView($this,"roles",$data);
      }
@@ -22,8 +30,7 @@
      public function getRoles()
      {
        $arrData = $this->model->selectRoles(); //hacemos llamado al model Roles con el metodo selectRoles
-       
-
+      
        //recorremos el array hasta que llegue a todos los registros que tenemos
        for ($i=0; $i < count($arrData); $i++) { 
           
@@ -37,16 +44,16 @@
           //acciones para editar, permisos, eliminar enviando su evento y el idrol
           $arrData[$i]['options'] = '<div class="text-center">
                                     
-                                    <button class="btn btn-warning btn-sm btnPermisosRol" rl="'.$arrData[$i]['idrol'].'" title="Permisos">
+                                    <button class="btn btn-warning btn-sm btnPermisosRol" onclick="fntPermisosRol('.$arrData[$i]['idrol'].')" title="Permisos">
                                       <i class="fas fa-key"></i>
                                     </button>
 
-                                    <button class="btn btn-primary btn-sm btnEditarRol" rl="'.$arrData[$i]['idrol'].'" title="Editar Rol">
+                                    <button class="btn btn-primary btn-sm btnEditarRol" onclick="fntEditRol('.$arrData[$i]['idrol'].')" title="Editar Rol">
                                        <i class="fas fa-pencil-alt"></i>
                                     </button>
 
 
-                                    <button class="btn btn-danger btn-sm btnEliminarRol" rl="'.$arrData[$i]['idrol'].'" title="Eliminar Rol">
+                                    <button class="btn btn-danger btn-sm btnEliminarRol" onclick="fntDelRol('.$arrData[$i]['idrol'].')" title="Eliminar Rol">
                                        <i class="fas fa-trash-alt"></i>
                                     </button>
 
@@ -57,7 +64,7 @@
        echo json_encode($arrData,JSON_UNESCAPED_UNICODE); //convertir en formato json para hacer llamado en ajax (en caso consumamos la api en movil)
        die(); //finaliza la tarea
      
-     }
+       }
 
 
      //EXTRAER UN ROL

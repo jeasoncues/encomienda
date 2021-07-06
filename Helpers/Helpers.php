@@ -45,6 +45,16 @@
 
   }
 
+
+  //metodo para archivos pdf
+  function getFile(string $url, $data){
+    ob_start(); //inicializar info
+    require_once("Views/{$url}.php"); //requerimos la url
+    $file = ob_get_clean(); //limpiar buffer para retornar info
+    return $file;
+
+  }
+
   //limpiar caracteres en caso de inyecciones sql
   function strClean($stringcadena){
 
@@ -114,6 +124,23 @@
   {
     $cantidad = number_format($cantidad,2,SPD,SPM);
     return $cantidad;
+  }
+
+
+  function Meses(){
+    $meses = array("Enero",
+                   "Febrero",
+                   "Marzo",
+                   "Abril",
+                   "Mayo",
+                   "Junio",
+                   "Julio",
+                   "Agosto",
+                   "Septiembre",
+                   "Octubre",
+                   "Noviembre",
+                   "Diciembre");
+    return $meses;
   }
 
 ?>

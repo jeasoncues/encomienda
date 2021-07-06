@@ -22,6 +22,29 @@ document.addEventListener('DOMContentLoaded', function(){
                 {"data":"estado"},
                 {"data":"options"} 
             ],
+            
+            'dom': 'lBfrtip',
+		    'buttons': [
+			 {
+				"extend": "excelHtml5", 
+				"text": "<i class='fas fa-file-excel'></i> Excel",
+				"titleAttr": "Exportar a Excel",
+				"className": "btn btn-success",
+                "exportOptions": {
+                    //indicamos las columnas que vamos a exportar
+                    "columns":  [0, 1, 2, 3]
+
+                }
+			 },{
+				"extend": "pdfHtml5",
+				"text": "<i class='fas fa-file-pdf'></i> PDF",
+				"titleAttr": "Exportar a PDF",
+				"className": "btn btn-danger",
+                "exportOptions": {
+                    "columns": [0,1,2,3]
+                }
+			 }
+	        ],
             "resonsieve":"true", // RESPONSIVE (MOVIL)
             "bDestroy": true,
             "iDisplayLength": 10, // MUESTRE LOS PRIMEROS 10 REGISTROS
@@ -66,13 +89,7 @@ document.addEventListener('DOMContentLoaded', function(){
                         formRol.reset(); //reseteamos las cajas de texto
                         swal('Roles de Usuario', objData.msg, "success");
                         //recargamos la tabla
-                        tableRoles.api().ajax.reload(function(){
-
-                            fntEditRol();
-                            fntDelRol();
-                            fntPermisosRol();
-
-                        });
+                        tableRoles.api().ajax.reload(); 
                     }else{
                         swal("Error", objData.msg, "error");
                     }
@@ -108,19 +125,15 @@ btnOpenModal.addEventListener('click',function(){
 
 
 //SE EJECUTA AL MOMENTO DE CARGA LA PAGINA
-window.addEventListener('load', function() {
-    fntEditRol();
-    fntDelRol();
-    fntPermisosRol();
-}, false);
+window.addEventListener('load',function(){
+//    fntPermisosRol();    
+//    fntDelRol();
+//    fntEditRol();
+ },false);
 
+function fntEditRol(idrol){
 
-function fntEditRol(){
-
-    var btnEditRol =  document.querySelectorAll('.btnEditarRol');
-    btnEditRol.forEach(function(btnEditRol){
-       
-        btnEditRol.addEventListener('click',function(){
+    
              
             document.querySelector('#titleModal').innerHTML = "Actualizar Rol";
             document.querySelector('.modal-header').classList.replace("headerRegister","headerUpdate");
@@ -128,7 +141,7 @@ function fntEditRol(){
             document.querySelector('#titleBtn').innerHTML = "Actualizar";
             
             //obtener el atributo rl del controlador para editar
-            var idrol =  this.getAttribute("rl");
+            var idrol = idrol;
             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             var ajaxUrl = base_url+'/Roles/getRol/'+idrol; //url
 
@@ -166,23 +179,14 @@ function fntEditRol(){
                         swal("Error", objData.msg, "error");
                     }
                 }
-            }
+         }
+ }
             
 
-        })
+function fntDelRol(idrol) {
 
-    })
-}
-
-
-function fntDelRol() {
-
-    var btnEliminarRol =  document.querySelectorAll(".btnEliminarRol");
-    btnEliminarRol.forEach(function(btnEliminarRol){
-         
-        btnEliminarRol.addEventListener('click', function(){
-            
-            var idrol =  this.getAttribute("rl");
+    
+            var idrol = idrol;
 
             swal({
                 title: "Eliminar Rol",
@@ -223,20 +227,13 @@ function fntDelRol() {
                      
                 }
 
-            })
-
-        })
-    });
+              })
 }
 
 
-function fntPermisosRol(){
+function fntPermisosRol(idrol){
 
-    var btnPermisos =  document.querySelectorAll(".btnPermisosRol");
-    btnPermisos.forEach(function(btnPermisos){
-         btnPermisos.addEventListener('click',function(){
-
-             var idrol =  this.getAttribute("rl");
+             var idrol =  idrol;
              var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
              var ajaxUrl = base_url+'/Permisos/getPermisos/'+idrol;
 
@@ -252,10 +249,6 @@ function fntPermisosRol(){
                    
                 }
              }
-         
-             
-         })
-    })
 }
 
 
