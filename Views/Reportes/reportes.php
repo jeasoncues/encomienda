@@ -101,6 +101,39 @@
         </div>
       </div>
 
+      <div class="row">
+        <div class="col-md-12">
+          <div class="tile">
+            <div class="tile-body h3"><i class="fas fa-money-bill-alt"></i>  Ventas: <?= $data['pagoDia']['dia'].' / '.$data['pagoDia']['mes'].' / '. $data['pagoDia']['anio'] ?></div>
+            <div class="row">
+                <div class="col-md-6">
+                  <div class="tile">
+                  
+                    <div class="widget-small primary coloured-icon"><i class="icon fas fa-money-bill-alt fa-3x"></i>
+                      <div class="info">
+                        <h4>Ventas del <?= $data['pagoDia']['dia'] ?></h4>
+                           <p><b>
+                           <?php
+                            
+                            foreach($data['pagoDia']['dias'] as $pagos){
+                            
+                                echo $pagos['total'];
+                            
+                            }
+                           ?>
+                           </b></p> 
+                      </div>
+                    </div>
+                    
+                  </div>
+              </div>
+            <br>
+          
+            </div>
+          </div>
+        </div>
+      </div>
+
 
 
       <div class="row">

@@ -91,6 +91,16 @@
       }
 
 
+      public function selectVentasDia(int $anio, int $mes, int $dia)
+      {
+        $sql = "SELECT SUM(monto) as total FROM encomienda WHERE DAY(fecha)= $dia AND MONTH(fecha) = $mes AND YEAR(fecha) = $anio";
+        $pagos = $this->listar($sql);
+        $meses = Meses();
+        $arrData = array('anio' => $anio, 'mes' => $meses[intval($mes-1)], 'dia' => $dia, 'dias' => $pagos);
+        return $arrData;
+      }
+
+
     
    }
 

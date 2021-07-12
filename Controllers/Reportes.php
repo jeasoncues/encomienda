@@ -37,10 +37,11 @@
         // OBTENER AÑO Y MES
         $anio = date('Y');
         $mes = date('m');
+        $dia = date('d');
+     
         $data['pagoMes'] = $this->model->selectPagosMes($anio,$mes);
-
-
         $data['totalVentas'] = $this->model->selectVentas($anio,$mes);
+        $data['pagoDia'] = $this->model->selectVentasDia($anio,$mes,$dia);
    
         $this->views->getView($this,"reportes",$data);
     }
