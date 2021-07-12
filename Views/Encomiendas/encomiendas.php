@@ -38,6 +38,8 @@
                           <th>Destinatario</th>
                           <th>Estado</th>
                           <th>Destino</th>
+                          <th>Paquete</th>
+                          <th>Tipo Paquete</th>
                           <th>Placa</th>
                           <th>Tipo Pago</th>
                           <th>Monto</th>

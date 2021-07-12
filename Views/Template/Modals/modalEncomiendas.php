@@ -73,12 +73,26 @@
                     </select>
                   </div>
 
-                  <div class="form-group col-md-6">
+                  <div class="form-group col-md-3">
                     <label for="txtMonto">Monto</label>
-                    <input class="form-control" id="txtMonto" name="txtMonto" type="number">
+                    <input class="form-control" id="txtMonto" name="txtMonto" type="number" placeholder="S/.">
                   </div>
-                 
+                
+                 </div>
+                  
+               <div class="form-row">
+                 <div class="form-group col-md-6">
+                    <label for="control-label">Paquete</label>
+                    <textarea class="form-control" id="txtdescripcion" name="txtdescripcion"  placeholder="Descripción del paquete"></textarea>
+                 </div>
+
+                 <div class="form-group col-md-6">
+                 <label for="txtTipoPaquete">Tipo Paquete</label>
+                 <input class="form-control" id="txtTipoPaquete" name="txtTipoPaquete" type="text" placeholder="Fragil / Pesado">
+                 </div>
                </div>
+
+             
 
                 <div class="tile-footer">
                   <button id="btnActionForm" class="btn btn-success" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i><span id="btnText">Guardar</span></button>&nbsp;&nbsp;&nbsp;

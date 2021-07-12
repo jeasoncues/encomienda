@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded',function(){
             {"data":"destinatario"},
             {"data":"estado"},
             {"data":"destino"},
+            {"data":"descripcion"},
+            {"data":"peso_paquete"},
             {"data":"placa"},
             {"data":"tipopago"},
             {"data":"monto"},
@@ -69,19 +71,21 @@ document.addEventListener('DOMContentLoaded',function(){
         var strPlaca =  document.querySelector('#listPlaca').value;
         var intTipoPago = document.querySelector('#listTipoPago').value;
         var strMonto = document.querySelector('#txtMonto').value;
+        var strDescripcion =  document.querySelector("#txtdescripcion").value;
+        var strTipoPaquete = document.querySelector('#txtTipoPaquete').value;
         
-        if(intCliente == '' || strDestinatario == '' || strPlaca == '' || intTipoPago == '' || strMonto == '')
+        if(  strDestinatario == '' || strDestino == ''  ||  strMonto == '' || strDescripcion == '' || strTipoPaquete == '')
         {
             swal("Atencion", "Todos los campos son obligatorios", "error");
             return false;
         }
 
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-
         var ajaxUrl = base_url+'/Encomiendas/setEncomienda';
         var formData =  new FormData(formEncomienda);
         request.open("POST",ajaxUrl, true);
         request.send(formData);
+        
 
         request.onreadystatechange = function(){
 
@@ -90,7 +94,7 @@ document.addEventListener('DOMContentLoaded',function(){
                 var objData =  JSON.parse(request.responseText);
 
                 if(objData.status){
-                    $('#modalFormEncomienda').modal("hide");
+                    $('#modalFormEncomienda').modal('hide');
                     formEncomienda.reset();
                     swal("Encomienda",objData.msg,"success");
                     tableEncomiendas.api().ajax.reload();
@@ -185,10 +189,20 @@ function fntEditEncomienda(idencomienda)
                 document.querySelector("#txtDestinatario").value = objData.data.destinatario;
                 document.querySelector("#txtDestino").value = objData.data.destino;
                 document.querySelector("#listPlaca").value = objData.data.idvehiculo;
-                document.querySelector("#listTipoPago").value = objData.data.tipopago;
+                document.querySelector("#txtdescripcion").value = objData.data.descripcion;
+                document.querySelector("#txtTipoPaquete").value = objData.data.peso_paquete;
                 document.querySelector("#txtMonto").value = objData.data.monto;
+
+                // $("#txtMonto").prop('disabled', true);
+
                 $('#listClientes').selectpicker('render');
-              
+        
+                if(objData.data.tipopago == 1){
+                    document.querySelector("#listTipoPago").value = 1;
+                }else{
+                    document.querySelector("#listTipoPago").value = 2;
+                }
+
 
                 if(objData.data.estado == 1) 
                 {
